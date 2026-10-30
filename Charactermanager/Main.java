@@ -1,7 +1,12 @@
-package com.unpri.charactermanager.model;
+package Charactermanager;
 
 import Charactermanager.view.MainWindow;
 import javax.swing.*;
+
+import com.unpri.charactermanager.model.Character;
+import com.unpri.charactermanager.model.CharacterManager;
+import com.unpri.charactermanager.model.CharacterType;
+
 import java.util.ArrayList;
 
 public class Main {

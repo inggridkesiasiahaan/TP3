@@ -12,6 +12,7 @@ public class MainWindow extends JFrame {
     public MainWindow(CharacterManager manager) {
         this.manager = manager;
 
+        
         setTitle("Character Manager - Sprint #3 (GUI)");
         setSize(450, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
