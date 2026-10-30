@@ -99,6 +99,20 @@ public class Character {
         this.mana += 15;
     }
 
+    // Method equals() untuk membandingkan karakter berdasarkan nama (Bagian A TP5)
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Character character = (Character) obj;
+        return name != null && name.equalsIgnoreCase(character.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name != null ? name.toLowerCase().hashCode() : 0;
+    }
+
     // toString() diperbarui untuk menampilkan mana (Bagian A & B)
     @Override
     public String toString() {
