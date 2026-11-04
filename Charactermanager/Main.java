@@ -1,0 +1,46 @@
+package Charactermanager;
+
+import Charactermanager.view.MainWindow;
+import javax.swing.*;
+
+import com.unpri.charactermanager.model.Character;
+import com.unpri.charactermanager.model.CharacterManager;
+import com.unpri.charactermanager.model.CharacterType;
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== CHARACTER MANAGER SPRINT #2 & #3 ===");
+
+        CharacterManager manager = new CharacterManager();
+
+        // Uji addCharacter dan validasi duplikat
+        Character c1 = new Character("Arthas", CharacterType.WARRIOR, 10, 100, 30, 50);
+        Character c2 = new Character("Jaina", CharacterType.MAGE, 10, 80, 45, 120);
+        Character c3 = new Character("Arthas", CharacterType.ASSASSIN, 5, 90, 35, 40);
+
+        // Karakter tambahan
+        Character c4 = new Character("Legolas", CharacterType.ARCHER, 12, 85, 40, 60);
+        Character c5 = new Character("Gimli", CharacterType.WARRIOR, 9, 120, 35, 20);
+
+        manager.addCharacter(c1);
+        manager.addCharacter(c2);
+        manager.addCharacter(c3);
+        manager.addCharacter(c4);
+        manager.addCharacter(c5);
+
+        // Uji defensive copy
+        ArrayList<Character> listAwal = manager.getAllCharacters();
+        listAwal.clear();
+        System.out.println("Total karakter aman (Defensive Copy aktif): " + manager.getTotalCharacters());
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                MainWindow window = new MainWindow(manager);
+                window.setVisible(true);
+            }
+        });
+    }
+}
